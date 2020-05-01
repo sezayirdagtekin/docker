@@ -10,3 +10,9 @@ docker build -f Dockerfile -t sezos .
 
 Run:
 docker run -d --name sezoweb -p 8080:8080 sezos
+
+
+Test:
+
+http://localhost:8080/
+
