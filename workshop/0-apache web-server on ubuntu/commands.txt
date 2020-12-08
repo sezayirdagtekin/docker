@@ -1,0 +1,47 @@
+
+#build image
+
+> docker build -f Dockerfile --tag webserver .
+
+#list images
+PS D:\test\> docker images
+
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+webserver                     latest              e049446bc2e4        3 minutes ago       216MB
+
+> docker run -d -p 8080:80 webserver
+6257d918948383b2d7e8b62af0287ed044a3f518916e17195faff81f74700832
+PS D:\test\>
+
+# check in browser
+http://localhost:8080/
+
+
+PS D:\test\> docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+6257d9189483        webserver           "/bin/sh -c '/usr/sb…"   4 minutes ago       Up 4 minutes        0.0.0.0:8080->80/tcp   wonderful_chandrasekhar
+PS D:\test\> docker exec -it 625 bash
+root@6257d9189483:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@6257d9189483:/# cd var/www/html
+root@6257d9189483:/var/www/html# ls
+index.html
+root@6257d9189483:/var/www/html# apt-get install  nano
+
+root@6257d9189483:/var/www/html# ls
+index.html
+root@6257d9189483:/var/www/html# nano index.html
+
+ GNU nano 5.2    index.html                                                                        
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+</head>
+<body>
+
+<h1>Hi there!!!</h1>
+<p>This is sample  page</p>
+
+</body>
+</html>
