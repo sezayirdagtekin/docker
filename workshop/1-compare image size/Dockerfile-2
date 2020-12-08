@@ -1,0 +1,14 @@
+
+# dockerfile manyline:
+
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y curl 
+
+RUN mkdir -p /opt/jboss/wildfly \
+&& cd /tmp \
+&& curl -O https://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.tar.gz  \
+&& tar xf wildfly-10.1.0.Final.tar.gz  \
+&& mv wildfly-10.1.0.Final /opt/jboss/wildfly \
+&& rm wildfly-10.1.0.Final.tar.gz
+

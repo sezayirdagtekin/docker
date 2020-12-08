@@ -1,0 +1,15 @@
+
+#Many Line Dockerfile
+PS D:\test\docker\workshop\1-compare image size> docker build -f Dockerfile-1 -t jboss1 .
+
+#One Line Dockerfile
+PS D:\test\docker\workshop\1-compare image size> docker build -f Dockerfile-2 -t jboss2 .
+
+
+#Check image sizes
+PS D:\test\docker\workshop\1-compare image size> docker image ls
+
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+jboss2                        latest              3c0890155008        21 seconds ago      279MB
+jboss1                        latest              6445e3e2d4e6        3 minutes ago       581MB
+
